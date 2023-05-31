@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --transition: transform .75s cubic-bezier(0.075, 0.500, 0.000, 1.000)
+}
+body{
+    background-color: #010101;
+}
+
+.main-header {
+    position: relative;
+}
+.layers {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+.layer {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    will-change: transform;
+    transition: var(--transition);
+}
+.block{
+    min-height: 100vh;
+}
+.layers__base {
+    transform: translate3d(0, calc(var(--scrollTop)/1.6), 0);
+}
+.layers__four {
+    transform: translate3d(0, calc(var(--scrollTop)/1.7), 0);
+}
+.layers__three {
+    transform: translate3d(0, calc(var(--scrollTop)/2), 0);
+}
+.layers__two {
+    transform: translate3d(0, calc(var(--scrollTop)/5), 0);
+}
+.layers__one {
+    transform: translate3d(0, calc(var(--scrollTop)/50), 0);
+}
