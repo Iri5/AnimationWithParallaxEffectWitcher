@@ -36,15 +36,9 @@ body{
 .layers__base {
     transform: translate3d(0, calc(var(--scrollTop)/1.6), 0);
 }
-.layers__four {
-    transform: translate3d(0, calc(var(--scrollTop)/1.7), 0);
-}
-.layers__three {
+.layers__midle {
     transform: translate3d(0, calc(var(--scrollTop)/2), 0);
 }
-.layers__two {
-    transform: translate3d(0, calc(var(--scrollTop)/5), 0);
-}
-.layers__one {
-    transform: translate3d(0, calc(var(--scrollTop)/50), 0);
+.layers__front {
+    transform: translate3d(0, calc(var(--scrollTop)/10), 0);
 }
