@@ -4,8 +4,14 @@ console.log(blocks);
 window.addEventListener('scroll', e =>{
     document.body.style.cssText += `--scrollTop: ${this.scrollY}px`
     let windowInnerHeight = document.documentElement.clientHeight;
+    for (let i = 0; i < count; i++){
+        if (this.scrollY > windowInnerHeight * (i+1)){
+            document.body.style.cssText += `--scrollTop: ${this.scrollY - windowInnerHeight*(i+1)}px`
+        }
+    }
+
     if (this.scrollY > windowInnerHeight){
-        document.body.style.cssText += `--scrollTop: ${this.scrollY - windowInnerHeight}px`
+        
     }
    
     for (let i = 0; i < count; i++){
