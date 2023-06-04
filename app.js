@@ -16,19 +16,21 @@ window.addEventListener('scroll', e =>{
    
     for (let i = 0; i < count; i++){
         if (this.scrollY > windowInnerHeight * (i+1)){
-            let checkBlock = document.querySelectorAll('.block');
-            if (!checkBlock[i].firstElementChild.firstElementChild.classList.contains('layers__base')){
-                checkBlock[i].firstElementChild.firstElementChild.classList.add('layers__base');
-                checkBlock[i].firstElementChild.firstElementChild.nextElementSibling.classList.add('layers__middle');
-                checkBlock[i].firstElementChild.firstElementChild.nextElementSibling.classList.add('layers__front');
+            let layers = blocks[i].querySelectorAll('.layer');
+            
+            if(!layers[0].classList.contains('layers__base')){
+                layers[0].classList.add('layers__base');
+                layers[1].classList.add('layers__middle');
+                layers[2].classList.add('layers__front');
             }
         }
         if (this.scrollY < windowInnerHeight * (i+1)){
-            let checkBlock = document.querySelectorAll('.block');
-            if (checkBlock[i].firstElementChild.firstElementChild.classList.contains('layers__base')){
-                checkBlock[i].firstElementChild.firstElementChild.classList.remove('layers__base');
-                checkBlock[i].firstElementChild.firstElementChild.nextElementSibling.classList.remove('layers__middle');
-                checkBlock[i].firstElementChild.firstElementChild.nextElementSibling.classList.remove('layers__front');
+            let layers = blocks[i].querySelectorAll('.layer');
+            
+            if(layers[0].classList.contains('layers__base')){
+                layers[0].classList.remove('layers__base');
+                layers[1].classList.remove('layers__middle');
+                layers[2].classList.remove('layers__front');
             }
         }
     }
